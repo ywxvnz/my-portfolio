@@ -1153,7 +1153,7 @@ body.job-details-open {
 }
 
 .skill-card {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 16px;
   text-align: center;
@@ -1169,7 +1169,7 @@ body.job-details-open {
 }
 
 .skill-card img {
-  max-height: 60px;
+  max-height: 50px;
   max-width: 100%;
   object-fit: contain;
   margin-bottom: 8px;
@@ -1182,6 +1182,21 @@ body.job-details-open {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--onyx);
+}
+
+/* Keep labels and strength icons legible on the dark skillset panels. */
+.rect-3 .skill-title,
+.rect-6 .skill-title,
+.rect-6 .skill-card i {
+  color: var(--white);
+}
+
+.skills-section .rect .skill-card:hover .skill-title {
+  color: var(--night-plum);
+}
+
+.rect-6 .skill-card:hover i {
+  color: var(--rose-graden);
 }
 
 .skill-item {
@@ -1448,6 +1463,11 @@ body.job-details-open {
   background-color: var(--dove) !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-6px);
+}
+
+#contact .contact:hover > i,
+#contact #phone-card:hover > i {
+  color: var(--rose-graden) !important;
 }
 
 /* Footer */
