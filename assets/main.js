@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ...document.querySelectorAll('.experience-section > h2, .experience-grid .company'),
     ...document.querySelectorAll('.education-section > h2, .education-grid .school'),
     ...document.querySelectorAll('.skills-section .rect'),
+    ...document.querySelectorAll('.skills-section .skillset-heading, .skills-section .skillset-category'),
     ...document.querySelectorAll('.contact-section > .container > h2, .contact-section > .container > p, .contact-container'),
     ...document.querySelectorAll('.projects-section > h2, .projects-section > p, .projects-section .projects-carousel'),
     ...document.querySelectorAll('.projects-page > h2, .projects-page > p, .projects-page .row > .col-md-4'),
