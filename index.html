@@ -68,8 +68,11 @@
     <!-- Left: About Me -->
     <div class="col-md-6">
       <!--<div class="hero2-glow"></div>-->
-      <h2>hi! i'm vanessa</h2>
-      <h3 class="serif"> a computer science graduate </h3>
+      <header class="section-heading about-heading">
+        <span class="section-eyebrow">ABOUT ME</span>
+        <h2>hi! i'm vanessa</h2>
+        <p>A Computer Science graduate.</p>
+      </header>
       <div class="about-photo-carousel mt-3" data-about-carousel aria-label="Photo gallery">
         <div class="about-photo-viewport">
           <img class="about-photo-slide" src="assets/images/me1.png" alt="Vanessa portrait 1">
@@ -116,7 +119,11 @@
 </section>
 
 <section class="experience-section container pt-5 pb-5">
-    <h2>my experience</h2>
+    <header class="section-heading">
+      <span class="section-eyebrow">PROFESSIONAL EXPERIENCE</span>
+      <h2>my experience</h2>
+      <p>Here are the professional experiences I have so far.</p>
+    </header>
     <div class="experience-grid">
         <article class="company company-sdca bg-white p-4 shadow-sm rounded-4">
         <div class="company-content">
@@ -157,7 +164,11 @@
 </div>
 
 <section class="education-section container pt-5 pb-5">
-    <h2>my academic background</h2>
+    <header class="section-heading">
+      <span class="section-eyebrow">EDUCATION</span>
+      <h2>my academic background</h2>
+      <p>The academic foundation I have built through my education.</p>
+    </header>
     <div class="education-grid">
         <article class="school school-cvsu bg-white p-4 shadow-sm rounded-4">
         <div class="school-content">
@@ -210,8 +221,11 @@
 </section>
 
 <section id="projects" class="projects-section container pt-5 pb-5">
-  <h2>my projects</h2>
-  <p>Academic and personal projects from my Computer Science journey.</p>
+  <header class="section-heading">
+    <span class="section-eyebrow">WORKS</span>
+    <h2>my projects</h2>
+    <p>Academic and personal projects from my Computer Science journey.</p>
+  </header>
   <div class="projects-carousel mt-4" data-project-carousel aria-label="Project previews">
     <button class="about-photo-arrow project-carousel-arrow" type="button" data-project-carousel-prev aria-label="Show previous projects">
       <i class="bi bi-chevron-left" aria-hidden="true"></i>
@@ -360,94 +374,224 @@
   </div>
 </section>
 
+<section class="experience-section container pt-5 pb-2" aria-labelledby="experience-heading">
+  <div class="experience-panel">
+    <header class="section-heading experience-heading">
+      <span class="section-eyebrow">WHAT I WORK ON</span>
+      <h2 id="experience-heading">my areas of experience</h2>
+      <p>Areas where I apply my skills and continue to grow.</p>
+    </header>
+    <div class="experience-area-grid">
+      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-web">
+        <span class="experience-number">01</span>
+        <span class="experience-icon" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
+        <h3>Web Development</h3>
+        <span class="experience-open">View details <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+      </button>
+      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-mobile">
+        <span class="experience-number">02</span>
+        <span class="experience-icon" aria-hidden="true"><i class="bi bi-phone"></i></span>
+        <h3>Mobile Development</h3>
+        <span class="experience-open">View details <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+      </button>
+      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-data">
+        <span class="experience-number">03</span>
+        <span class="experience-icon" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span>
+        <h3>Data Analytics &amp; Visualization</h3>
+        <span class="experience-open">View details <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+      </button>
+      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-design">
+        <span class="experience-number">04</span>
+        <span class="experience-icon" aria-hidden="true"><i class="bi bi-palette"></i></span>
+        <h3>UI/UX &amp; Design</h3>
+        <span class="experience-open">View details <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+      </button>
+      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-ai-cloud">
+        <span class="experience-number">05</span>
+        <span class="experience-icon" aria-hidden="true"><i class="bi bi-cloud-check"></i></span>
+        <h3>AI &amp; Cloud Technologies</h3>
+        <span class="experience-open">View details <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="modal fade experience-modal" id="experience-web" tabindex="-1" aria-labelledby="experience-web-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 01</span><h2 class="modal-title" id="experience-web-title">Web Development</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p class="experience-description">Experience developing web applications through academic projects, internship work, and personal projects, with exposure to both frontend and backend development.</p>
+        <h3>What I've worked with</h3>
+        <ul class="experience-work-list"><li>Frontend and backend development</li><li>Responsive web interfaces</li><li>Database-connected applications</li><li>CRUD functionality</li><li>API integration</li><li>Authentication and role management</li><li>Testing and debugging</li></ul>
+        <h3>Technologies</h3>
+        <div class="experience-tags"><span>PHP</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>CodeIgniter 3</span><span>Bootstrap</span><span>React.js</span><span>MySQL</span></div>
+        <h3>Relevant projects</h3>
+        <div class="experience-projects">
+          <article class="experience-project"><div><h4>Parent Portal <span>Internship</span></h4><p>Frontend and backend development, database-connected features, responsive interfaces, testing and debugging.</p></div><a href="projects/parentportal.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Nubi <span>Academic Project</span></h4><p>Responsive frontend development, UI/UX, backend integration, Open-Meteo API and Gemini API.</p></div><a href="projects/nubi.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Online Financial Tracker <span>Academic Project</span></h4><p>Frontend development, backend functionality, financial logic, data visualization and testing.</p></div><a href="projects/financial.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="modal fade experience-modal" id="experience-mobile" tabindex="-1" aria-labelledby="experience-mobile-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 02</span><h2 class="modal-title" id="experience-mobile-title">Mobile Development</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p class="experience-description">Experience developing a cross-platform mobile application using Flutter, with a focus on user interfaces, data management, API integration, and health-related data visualization.</p>
+        <h3>What I've worked with</h3>
+        <ul class="experience-work-list"><li>Cross-platform mobile development</li><li>Mobile UI development</li><li>Local and cloud databases</li><li>API integration</li><li>Data visualization</li><li>OCR-based image processing</li></ul>
+        <h3>Technologies</h3>
+        <div class="experience-tags"><span>Flutter</span><span>Dart</span><span>Firebase Firestore</span><span>SQLite</span><span>Google Cloud Vision</span></div>
+        <h3>Relevant project</h3>
+        <div class="experience-projects">
+          <article class="experience-project"><div><h4>GlucoMate <span>Thesis Project</span></h4><p>Served as Project &amp; Thesis Leader and Frontend and Backend Developer, working on the UI, health-record database structure, API integration, and OCR-based glucometer scanning feature.</p></div><a href="projects/glucomate.html">View GlucoMate <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="modal fade experience-modal" id="experience-data" tabindex="-1" aria-labelledby="experience-data-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 03</span><h2 class="modal-title" id="experience-data-title">Data Analytics &amp; Visualization</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p class="experience-description">Developing foundational experience in data analytics and visualization through academic coursework, self-directed learning, and projects involving structured data, SQL, statistics, and visual reporting.</p>
+        <h3>What I've worked with</h3>
+        <ul class="experience-work-list"><li>SQL querying</li><li>Data visualization</li><li>Statistical analysis</li><li>Data interpretation</li><li>Database management</li><li>Dashboard and chart development</li></ul>
+        <h3>Tools &amp; Technologies</h3>
+        <div class="experience-tags"><span>SQL</span><span>Power BI</span><span>MySQL</span><span>SQLite</span><span>Firebase Firestore</span><span>Chart.js</span></div>
+        <h3>Relevant learning &amp; projects</h3>
+        <ul class="experience-learning-list"><li>Introduction to SQL — DataCamp</li><li>Joining Data in SQL — DataCamp</li><li>Introduction to Power BI — DataCamp</li><li>Experimental Statistics — Academic Coursework</li></ul>
+        <div class="experience-projects">
+          <article class="experience-project"><div><h4>GlucoMate</h4><p>Blood glucose data visualization and health-record management.</p></div><a href="projects/glucomate.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>My Sugar Journal</h4><p>Glucose trend visualization and database-connected record management.</p></div><a href="projects/bsl.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Online Financial Tracker</h4><p>Financial data visualization using Chart.js.</p></div><a href="projects/financial.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="modal fade experience-modal" id="experience-design" tabindex="-1" aria-labelledby="experience-design-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 04</span><h2 class="modal-title" id="experience-design-title">UI/UX &amp; Design</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p class="experience-description">Experience designing user interfaces and visual experiences for web, mobile, and interactive applications, with a focus on usability, responsiveness, and visual presentation.</p>
+        <h3>What I've worked with</h3>
+        <ul class="experience-work-list"><li>UI/UX design</li><li>Responsive interface design</li><li>User-centered design</li><li>Wireframing and prototyping</li><li>Visual design</li><li>Interactive layouts</li><li>Branding and visual assets</li></ul>
+        <h3>Tools</h3>
+        <div class="experience-tags"><span>Figma</span><span>Canva</span><span>Adobe Photoshop</span><span>Inkscape</span></div>
+        <h3>Relevant projects</h3>
+        <div class="experience-projects">
+          <article class="experience-project"><div><h4>GlucoMate</h4><p>Mobile UI design and interface development.</p></div><a href="projects/glucomate.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Nubi</h4><p>UI/UX design and responsive frontend development.</p></div><a href="projects/nubi.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Online Financial Tracker</h4><p>Project Lead and UI/UX Designer.</p></div><a href="projects/financial.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Captured by V</h4><p>UI/UX design and frontend development.</p></div><a href="projects/photobooth.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>IDit</h4><p>UI/UX design, responsive interface and interactive image-editing experience.</p></div><a href="projects/idit.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Capybarush</h4><p>Graphic assets and visual design using Inkscape.</p></div><a href="projects/capybarush.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="modal fade experience-modal" id="experience-ai-cloud" tabindex="-1" aria-labelledby="experience-ai-cloud-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 05</span><h2 class="modal-title" id="experience-ai-cloud-title">AI &amp; Cloud Technologies</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p class="experience-description">Experience integrating AI-powered features and cloud services into academic and personal projects, with a focus on APIs, AI-assisted functionality, OCR, and cloud-based services.</p>
+        <h3>What I've worked with</h3>
+        <ul class="experience-work-list"><li>AI API integration</li><li>AI-powered application features</li><li>OCR</li><li>Cloud API integration</li><li>Cloud-based data services</li><li>AI-assisted development</li></ul>
+        <h3>Technologies</h3>
+        <div class="experience-tags"><span>Google Cloud Vision</span><span>Google Cloud</span><span>Google Cloud Secret Manager</span><span>Azure Bot Framework</span><span>Gemini API</span><span>AWS</span></div>
+        <h3>Relevant projects</h3>
+        <div class="experience-projects">
+          <article class="experience-project"><div><h4>GlucoMate</h4><p>Integrated Google Cloud services for OCR-based glucometer reading and API management, with an AI chatbot component using Azure Bot Framework.</p></div><a href="projects/glucomate.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="experience-project"><div><h4>Nubi</h4><p>Connected the chatbot interface to the Gemini API to enable AI-generated weather responses.</p></div><a href="projects/nubi.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
+        </div>
+        <div class="experience-learning"><h3>Learning</h3><p><strong>Microsoft Artificial Intelligence Course: Azure AI Fundamentals</strong><br>TESDA Online Program · 2026</p></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
 <section class="skills-section container pt-5 pb-5">
-  <div class="rectangle-container rounded-4">
-
-    <div class="rect rect-5 text-white">
+  <div class="skillset-shell">
+    <header class="section-heading skillset-heading">
+      <span class="section-eyebrow">TOOLS &amp; CAPABILITIES</span>
       <h2>my skillset</h2>
-    </div>
+      <p>A growing toolkit for building thoughtful digital experiences.</p>
+    </header>
 
-    <div class="rect rect-1">
-      <h3>Tech Stack</h3>
-      <div class="skills-grid rect-skills-grid">
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/php.png" alt="PHP"><div class="skill-title">PHP</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/js.webp" alt="JavaScript"><div class="skill-title">JavaScript</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/dart.png" alt="Dart"><div class="skill-title">Dart</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/python.png" alt="Python"><div class="skill-title">Python</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/cpp.png" alt="C++"><div class="skill-title">C++</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/html.png" alt="HTML"><div class="skill-title">HTML</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/css.png" alt="CSS"><div class="skill-title">CSS</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/flutter.png" alt="Flutter"><div class="skill-title">Flutter</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/reactjs.webp" alt="React.js"><div class="skill-title">React.js</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/codeigniter.svg" alt="CodeIgniter 3"><div class="skill-title">CodeIgniter</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/bootstrap.svg" alt="Bootstrap"><div class="skill-title">Bootstrap</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/mysql.webp" alt="MySQL"><div class="skill-title">MySQL</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/sqlite.webp" alt="SQLite"><div class="skill-title">SQLite</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/firebase.webp" alt="Firebase Firestore"><div class="skill-title">Firebase Firestore</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/googlecloud.png" alt="Google Cloud"><div class="skill-title">Google Cloud</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/cloudvision.png" alt="Google Cloud Vision"><div class="skill-title">GC Vision</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/botframework.png" alt="Azure Bot Framework"><div class="skill-title">Azure Bot Framework</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/secretmanager.png" alt="Google Cloud Secret Manager"><div class="skill-title">GC Secret Manager</div></div></div>
-      </div>
-    </div>
+    <div class="skillset-categories">
+      <article class="skillset-category skillset-tech">
+        <div class="skillset-category-heading"><span class="skillset-index">01</span><h3>Tech Stack</h3></div>
+        <div class="skillset-items skillset-tech-items">
+          <div class="skillset-item"><img src="assets/images/skills/php.png" alt=""><span>PHP</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/js.webp" alt=""><span>JavaScript</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/dart.png" alt=""><span>Dart</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/python.png" alt=""><span>Python</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/cpp.png" alt=""><span>C++</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/html.png" alt=""><span>HTML</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/css.png" alt=""><span>CSS</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/flutter.png" alt=""><span>Flutter</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/reactjs.webp" alt=""><span>React.js</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/codeigniter.svg" alt=""><span>CodeIgniter</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/bootstrap.svg" alt=""><span>Bootstrap</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/mysql.webp" alt=""><span>MySQL</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/sqlite.webp" alt=""><span>SQLite</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/firebase.webp" alt=""><span>Firebase Firestore</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/googlecloud.png" alt=""><span>Google Cloud</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/cloudvision.png" alt=""><span>GC Vision</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/botframework.png" alt=""><span>Azure Bot Framework</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/secretmanager.png" alt=""><span>GC Secret Manager</span></div>
+        </div>
+      </article>
 
-    <div class="rect rect-2">
-      <h3>Development Tools</h3>
-      <div class="skills-grid rect-skills-grid development-tools-grid">
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/git.png" alt="Git"><div class="skill-title">Git</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/github.png" alt="GitHub"><div class="skill-title">GitHub</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/gitbash.png" alt="Git Bash"><div class="skill-title">Git Bash</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/xampp.png" alt="XAMPP"><div class="skill-title">XAMPP</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/heidisql.png" alt="HeidiSQL"><div class="skill-title">HeidiSQL</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/vscode.png" alt="VS Code"><div class="skill-title">VS Code</div></div></div>
-      </div>
-    </div>
+      <article class="skillset-category">
+        <div class="skillset-category-heading"><span class="skillset-index">02</span><h3>Development Tools</h3></div>
+        <div class="skillset-items skillset-compact-items">
+          <div class="skillset-item"><img src="assets/images/skills/git.png" alt=""><span>Git</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/github.png" alt=""><span>GitHub</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/gitbash.png" alt=""><span>Git Bash</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/xampp.png" alt=""><span>XAMPP</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/heidisql.png" alt=""><span>HeidiSQL</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/vscode.png" alt=""><span>VS Code</span></div>
+        </div>
+      </article>
 
-    <div class="rect rect-3">
-      <h3>Areas of Experience</h3>
-      <div class="skills-grid rect-skills-grid area-experience-grid">
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Web Development</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Mobile App Development</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Database Management</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Software Testing</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Data Analytics</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Data Visualization</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">UI/UX Design</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Graphic Design</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">Technical Documentation</div></div></div>
-        <div class="skill-item"><div class="skill-card"><div class="skill-title">AI-Assisted Development</div></div></div>
-      </div>
-    </div>
+      <article class="skillset-category">
+        <div class="skillset-category-heading"><span class="skillset-index">03</span><h3>Software &amp; Productivity</h3></div>
+        <div class="skillset-items skillset-compact-items">
+          <div class="skillset-item"><img src="assets/images/skills/microsoft.png" alt=""><span>Microsoft Office</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/google.png" alt=""><span>Google Workspace</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/figma.avif" alt=""><span>Figma</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/canva.png" alt=""><span>Canva</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/photoshop.png" alt=""><span>Photoshop</span></div>
+          <div class="skillset-item"><img src="assets/images/skills/inkscape.png" alt=""><span>Inkscape</span></div>
+        </div>
+      </article>
 
-    <div class="rect rect-4">
-      <h3>Software &amp; Productivity</h3>
-      <div class="skills-grid rect-productivity-grid">
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/microsoft.png" alt="Microsoft Office"><div class="skill-title">Microsoft Office</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/google.png" alt="Google Workspace"><div class="skill-title">Google Workspace</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/figma.avif" alt="Figma"><div class="skill-title">Figma</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/canva.png" alt="Canva"><div class="skill-title">Canva</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/photoshop.png" alt="Photoshop"><div class="skill-title">Photoshop</div></div></div>
-        <div class="skill-item"><div class="skill-card"><img src="assets/images/skills/inkscape.png" alt="Inkscape"><div class="skill-title">Inkscape</div></div></div>
-      </div>
-    </div>
-
-    <div class="rect rect-6">
-      <h3>Personal Strengths</h3>
-      <div class="skills-grid rect-skills-grid">
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-lightbulb" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Problem Solving</div></div></div>
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-search" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Attention to Detail</div></div></div>
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-arrow-repeat" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Adaptability</div></div></div>
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-shield-check" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Dependability</div></div></div>
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-people" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Collaboration</div></div></div>
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-person-badge" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Leadership</div></div></div>
-        <div class="skill-item"><div class="skill-card"><i class="bi bi-journal-bookmark" style="font-size: 2rem;" aria-hidden="true"></i><div class="skill-title">Willingness to Learn</div></div></div>
-      </div>
+      <article class="skillset-category skillset-strengths">
+        <div class="skillset-category-heading"><span class="skillset-index">04</span><h3>Personal Strengths</h3></div>
+        <div class="skillset-items skillset-strength-items">
+          <div class="skillset-strength"><i class="bi bi-lightbulb" aria-hidden="true"></i><span>Problem Solving</span></div>
+          <div class="skillset-strength"><i class="bi bi-search" aria-hidden="true"></i><span>Attention to Detail</span></div>
+          <div class="skillset-strength"><i class="bi bi-arrow-repeat" aria-hidden="true"></i><span>Adaptability</span></div>
+          <div class="skillset-strength"><i class="bi bi-shield-check" aria-hidden="true"></i><span>Dependability</span></div>
+          <div class="skillset-strength"><i class="bi bi-people" aria-hidden="true"></i><span>Collaboration</span></div>
+          <div class="skillset-strength"><i class="bi bi-person-badge" aria-hidden="true"></i><span>Leadership</span></div>
+          <div class="skillset-strength"><i class="bi bi-journal-bookmark" aria-hidden="true"></i><span>Willingness to Learn</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="courses-section container pt-5 pb-5">
-  <h2>my courses &amp; certifications</h2>
+  <header class="section-heading">
+    <span class="section-eyebrow">CONTINUOUS LEARNING</span>
+    <h2>my courses &amp; certifications</h2>
+    <p>Coursework and certifications that support my ongoing professional growth.</p>
+  </header>
   <div class="courses-carousel mt-4" data-project-carousel aria-label="Course and certification previews">
     <button class="about-photo-arrow project-carousel-arrow" type="button" data-project-carousel-prev aria-label="Show previous courses">
       <i class="bi bi-chevron-left" aria-hidden="true"></i>
@@ -541,8 +685,11 @@
 <section id="contact" class="contact-section container pt-5 pb-5">
 <div class="container mt-4">
 
-<h2>contact me</h2>
-<p>Let’s connect! Feel free to reach out for job opportunities, collaborations, or just to say hi.</p>
+<header class="section-heading">
+  <span class="section-eyebrow">GET IN TOUCH</span>
+  <h2>contact me</h2>
+  <p>Feel free to reach out for job opportunities, collaborations, or just to say hi.</p>
+</header>
 <div class="contact-container p-4 shadow-sm rounded-4" style="background-color: white;">
   <div class="row g-3">
     
