@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ...document.querySelectorAll('.education-section > h2, .education-grid .school'),
     ...document.querySelectorAll('.skills-section .rect'),
     ...document.querySelectorAll('.contact-section > .container > h2, .contact-section > .container > p, .contact-container'),
+    ...document.querySelectorAll('.projects-section > h2, .projects-section > p, .projects-section .projects-carousel'),
     ...document.querySelectorAll('.projects-page > h2, .projects-page > p, .projects-page .row > .col-md-4'),
     ...document.querySelectorAll('.site-footer .container')
   ];
@@ -72,6 +73,124 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  document.querySelectorAll('[data-project-carousel]').forEach((carousel) => {
+    const viewport = carousel.querySelector('[data-project-carousel-viewport]');
+    const track = carousel.querySelector('.projects-carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.project-carousel-slide'));
+    const previousButton = carousel.querySelector('[data-project-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-project-carousel-next]');
+    const status = carousel.querySelector('[data-project-carousel-status]');
+    let activeIndex = 0;
+    let scrollFrame;
+    let autoplayTimer;
+    let resumeTimer;
+    let isHovered = false;
+    let isFocused = false;
+
+    if (!viewport || !track || !slides.length) return;
+
+    const visibleSlideCount = () => {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      return slideWidth ? Math.max(1, Math.round((viewport.clientWidth + gap) / (slideWidth + gap))) : 1;
+    };
+
+    const updateStatus = (announce = true) => {
+      const visibleCount = visibleSlideCount();
+      const lastVisibleIndex = Math.min(activeIndex + visibleCount, slides.length);
+      status.setAttribute('aria-live', announce ? 'polite' : 'off');
+      status.textContent = `Projects ${activeIndex + 1}-${lastVisibleIndex} of ${slides.length}`;
+    };
+
+    const goToSlide = (index, announce = true) => {
+      const lastStartIndex = Math.max(0, slides.length - visibleSlideCount());
+      activeIndex = index < 0 ? lastStartIndex : index > lastStartIndex ? 0 : index;
+      const left = slides[activeIndex].offsetLeft - slides[0].offsetLeft;
+      viewport.scrollTo({ left, behavior: reducedMotion ? 'auto' : 'smooth' });
+      updateStatus(announce);
+    };
+
+    const stopAutoplay = () => window.clearInterval(autoplayTimer);
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (reducedMotion || isHovered || isFocused || resumeTimer !== undefined) return;
+      autoplayTimer = window.setInterval(() => goToSlide(activeIndex + 1, false), 2000);
+    };
+
+    const pauseAutoplayAfterInteraction = () => {
+      stopAutoplay();
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => {
+        resumeTimer = undefined;
+        startAutoplay();
+      }, 10000);
+    };
+
+    const updateActiveSlide = () => {
+      scrollFrame = undefined;
+      const viewportLeft = viewport.getBoundingClientRect().left;
+      activeIndex = slides.reduce((closestIndex, slide, index) => {
+        const closestDistance = Math.abs(slides[closestIndex].getBoundingClientRect().left - viewportLeft);
+        const slideDistance = Math.abs(slide.getBoundingClientRect().left - viewportLeft);
+        return slideDistance < closestDistance ? index : closestIndex;
+      }, 0);
+      updateStatus(false);
+    };
+
+    previousButton?.addEventListener('click', () => {
+      goToSlide(activeIndex - 1);
+      pauseAutoplayAfterInteraction();
+    });
+    nextButton?.addEventListener('click', () => {
+      goToSlide(activeIndex + 1);
+      pauseAutoplayAfterInteraction();
+    });
+    carousel.addEventListener('pointerenter', () => {
+      isHovered = true;
+      stopAutoplay();
+    });
+    carousel.addEventListener('pointerleave', () => {
+      isHovered = false;
+      startAutoplay();
+    });
+    carousel.addEventListener('focusin', () => {
+      isFocused = true;
+      stopAutoplay();
+    });
+    carousel.addEventListener('focusout', (event) => {
+      if (carousel.contains(event.relatedTarget)) return;
+      isFocused = false;
+      startAutoplay();
+    });
+    carousel.addEventListener('pointerdown', stopAutoplay);
+    carousel.addEventListener('pointerup', pauseAutoplayAfterInteraction);
+    carousel.addEventListener('pointercancel', pauseAutoplayAfterInteraction);
+    viewport.addEventListener('scroll', () => {
+      if (scrollFrame === undefined) scrollFrame = window.requestAnimationFrame(updateActiveSlide);
+    });
+    viewport.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goToSlide(activeIndex - 1);
+        pauseAutoplayAfterInteraction();
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goToSlide(activeIndex + 1);
+        pauseAutoplayAfterInteraction();
+      }
+    });
+    window.addEventListener('resize', () => {
+      const lastStartIndex = Math.max(0, slides.length - visibleSlideCount());
+      if (activeIndex > lastStartIndex) goToSlide(lastStartIndex);
+      else updateStatus();
+    });
+
+    updateStatus();
+    startAutoplay();
+  });
 
   document.querySelectorAll('[data-about-carousel]').forEach((carousel) => {
     const slides = Array.from(carousel.querySelectorAll('.about-photo-slide'));
