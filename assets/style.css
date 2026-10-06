@@ -298,7 +298,6 @@ h1 {
 
  h3 {
   font-family: "Nunito";
-  font-size: 2rem;
   font-weight: bold;
   color: var(--velvet-plum);
 }
@@ -639,7 +638,7 @@ p {
 }
 
 .job-details-trigger:hover {
-  background-color: var(--night-plum);
+  background-color: var(--mauve-haze);
   transform: translateY(-1px);
 }
 
@@ -842,6 +841,10 @@ body.job-details-open {
   --school-logo: url("images/geanhs.png");
 }
 
+.school-tles {
+  --school-logo: url("images/tles.png");
+}
+
 .school:hover {
   transform: translateY(-5px); 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important; 
@@ -873,7 +876,7 @@ body.job-details-open {
   padding: 24px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(164, 150, 190, 0.35);
+  /*border: 1px solid rgba(164, 150, 190, 0.35);*/
   box-shadow: 0 10px 24px rgba(47, 0, 88, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -920,9 +923,9 @@ body.job-details-open {
   align-items: center;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(252, 239, 250, 0.9);
+  background: var(--rose-graden);
   border: 1px solid rgba(104, 73, 118, 0.18);
-  color: var(--velvet-plum);
+  color: white;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -957,9 +960,10 @@ body.job-details-open {
 
 .course-meta span {
   display: inline-block;
+  margin-top: 4px;
   padding: 6px 11px;
   border-radius: 999px;
-  background: rgba(208, 157, 184, 0.12);
+  background: var(--dove);
   color: var(--night-plum);
   font-size: 0.72rem;
   font-weight: 800;
@@ -1204,13 +1208,34 @@ body.certificate-modal-open {
 }
 
 .education-grid .school-content {
+  position: relative;
+  isolation: isolate;
   min-height: 280px;
   padding: 28px;
+  overflow: hidden;
   border: 1px solid rgba(47, 0, 88, 0.08);
   border-radius: 1rem;
   background-color: var(--white);
   box-shadow: 0 2px 10px var(--mauve-haze);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.education-grid .school-content::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  background-image: var(--school-logo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(180px, 50%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.education-grid .school-content > * {
+  position: relative;
+  z-index: 1;
 }
 
 .education-grid .school:hover {
@@ -1315,7 +1340,7 @@ body.certificate-modal-open {
 .section-eyebrow {
   display: inline-block;
   margin-bottom: 8px;
-  color: var(--velvet-plum);
+  color: var(--rose-graden);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -1332,7 +1357,7 @@ body.certificate-modal-open {
 .section-heading > p {
   max-width: 64ch;
   margin: 8px 0 0;
-  color: var(--gray);
+  color: var(--mauve-haze);
   font-size: 1rem;
   line-height: 1.55;
 }
@@ -1376,13 +1401,13 @@ body.certificate-modal-open {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: rgba(208, 157, 184, 0.12);
+  background: rgba(218, 74, 150, 0.12);
   content: "";
 }
 
 .experience-card:hover {
   transform: translateY(-4px);
-  border-color: var(--rose-graden);
+  /*border-color: var(--rose-graden);*/
   box-shadow: 0 14px 28px rgba(47, 0, 88, 0.11);
 }
 
@@ -1530,8 +1555,8 @@ body.certificate-modal-open {
   padding: 7px 11px;
   border: 1px solid rgba(104, 73, 118, 0.16);
   border-radius: 999px;
-  background: #f8f2fa;
-  color: var(--night-plum);
+  background: var(--rose-graden);
+  color: white;
   font-size: 0.82rem;
   font-weight: 700;
 }
@@ -1683,9 +1708,9 @@ body.certificate-modal-open {
   position: relative;
   min-width: 0;
   padding: 24px;
-  border: 1px solid rgba(104, 73, 118, 0.18);
+  /*border: 1px solid rgba(104, 73, 118, 0.18);*/
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(252, 239, 250, 0.76));
+  background: white;
   box-shadow: 0 8px 24px rgba(47, 0, 88, 0.055);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
@@ -1750,9 +1775,9 @@ body.certificate-modal-open {
   justify-content: center;
   gap: 8px;
   padding: 10px 8px;
-  border: 1px solid rgba(164, 150, 190, 0.32);
+  /*border: 1px solid rgba(164, 150, 190, 0.32);*/
   border-radius: 14px;
-  background: linear-gradient(145deg, #fff 0%, #fbf6fc 100%);
+  background: var(--dove);
   color: var(--night-plum);
   text-align: center;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
@@ -1790,17 +1815,28 @@ body.certificate-modal-open {
   gap: 10px;
   padding: 13px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(164, 150, 190, 0.18);
-  background: linear-gradient(110deg, #f4edf8, #fff5fa);
+  /*border: 1px solid rgba(164, 150, 190, 0.18);*/
+  background: var(--dove);
   color: var(--night-plum);
   font-size: 0.88rem;
   font-weight: 700;
+}
+
+.skillset-strength:hover {
+  transform: translateY(-2px);
+  border-color: rgba(208, 157, 184, 0.9);
+  background: #fff8fc;
+  box-shadow: 0 6px 14px rgba(47, 0, 88, 0.12);
 }
 
 .skillset-strength i {
   flex: 0 0 auto;
   color: var(--velvet-plum);
   font-size: 1.15rem;
+}
+
+.skillset-strength i:hover {
+  color: var(--rose-graden) !important;
 }
 
 @media (max-width: 1100px) {
