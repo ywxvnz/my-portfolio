@@ -2430,3 +2430,153 @@ button.about-photo-arrow.project-carousel-arrow {
   color: white;
   text-align: center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home,
+#about-me,
+#education,
+#experience,
+#capabilities,
+#projects,
+#skills,
+#learning,
+#contact {
+  scroll-margin-top: 6rem;
+}
+
+.section-navigator {
+  text-align: center;
+  position: fixed;
+  top: 82px;
+  left: 0.5rem;
+  z-index: 1020;
+  width: 100px;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--mauve-haze);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: width 240ms ease, background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease, opacity 220ms ease, visibility 220ms ease;
+}
+
+.section-navigator.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.section-navigator-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: translateY(var(--section-nav-offset, 30px));
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-navigator-list a {
+  display: block;
+  box-sizing: border-box;
+  height: 30px;
+  min-height: 30px;
+  overflow: hidden;
+  padding: 0.2rem 0.9rem;
+  border-block: 1px solid transparent;
+  color: var(--velvet-plum);
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 220ms ease, opacity 220ms ease, filter 220ms ease, transform 220ms ease, border-color 220ms ease, font-size 220ms ease, font-weight 220ms ease;
+}
+
+.section-navigator-list a[aria-current="location"] {
+  border-block-color: var(--velvet-plum);
+  background: var(--rose-graden);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section-navigator:not(:hover):not(:focus-within) {
+  height: 92px;
+}
+
+.section-navigator:not(:hover):not(:focus-within) .section-navigator-list a:not([aria-current="location"]) {
+  opacity: 0.52;
+  filter: blur(0.45px);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.section-navigator:not(:hover):not(:focus-within) .section-navigator-list a[aria-current="location"] {
+  transform: scale(1.02);
+}
+
+.section-navigator:hover,
+.section-navigator:focus-within {
+  width: 100px;
+  max-height: min(420px, calc(100vh - 110px));
+  overflow-y: auto;
+  background: var(--mauve-haze);
+  box-shadow: 0 12px 32px rgba(47, 0, 88, 0.14);
+}
+
+.section-navigator:hover .section-navigator-list,
+.section-navigator:focus-within .section-navigator-list {
+  transform: none;
+}
+
+.section-navigator:hover .section-navigator-list a,
+.section-navigator:focus-within .section-navigator-list a {
+  border-color: transparent;
+  border-radius: 0;
+  color: var(--velvet-plum);
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 1;
+  filter: none;
+  text-transform: none;
+  transform: none;
+}
+
+.section-navigator:hover .section-navigator-list a:hover,
+.section-navigator:focus-within .section-navigator-list a:hover,
+.section-navigator .section-navigator-list a:focus-visible {
+  background: var(--dove);
+  color: var(--night-plum);
+  outline: none;
+}
+
+.section-navigator:hover .section-navigator-list a[aria-current="location"],
+.section-navigator:focus-within .section-navigator-list a[aria-current="location"] {
+  border-block-color: var(--velvet-plum);
+  background: var(--rose-graden);
+  border-radius: 0;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .section-navigator {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

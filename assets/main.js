@@ -1,5 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const navbar = document.querySelector('.navbar');
+  const homeLink = navbar?.querySelector('.nav-link[href="index.html"]');
+  const sectionNavItems = ['about-me', 'projects', 'contact'].map((id) => ({
+    link: navbar?.querySelector(`.nav-link[href="#${id}"]`),
+    section: document.getElementById(id)
+  }));
+
+  if (navbar && homeLink && sectionNavItems.every(({ link, section }) => link && section)) {
+    const navLinks = navbar.querySelectorAll('.nav-link');
+    let navUpdatePending = false;
+
+    const updateActiveNav = () => {
+      navUpdatePending = false;
+      const activationPoint = window.scrollY + navbar.getBoundingClientRect().height + 1;
+      const activeItem = sectionNavItems
+        .filter(({ section }) => section.getBoundingClientRect().top + window.scrollY <= activationPoint)
+        .at(-1);
+      const activeLink = activeItem?.link || homeLink;
+
+      navLinks.forEach((link) => {
+        const isActive = link === activeLink;
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    const scheduleActiveNavUpdate = () => {
+      if (navUpdatePending) return;
+      navUpdatePending = true;
+      window.requestAnimationFrame(updateActiveNav);
+    };
+
+    window.addEventListener('scroll', scheduleActiveNavUpdate, { passive: true });
+    window.addEventListener('resize', scheduleActiveNavUpdate);
+    window.addEventListener('hashchange', scheduleActiveNavUpdate);
+    updateActiveNav();
+  }
+
   const revealTargets = [
     ...document.querySelectorAll('.about-section > .row > div'),
     ...document.querySelectorAll('.experience-section > h2, .experience-grid .company'),
