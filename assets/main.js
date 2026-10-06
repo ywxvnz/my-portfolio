@@ -75,6 +75,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const capabilityOpeners = document.querySelectorAll('[data-capability-open]');
+  const capabilityClosers = document.querySelectorAll('[data-capability-close]');
+  let activeCapabilityDrawer;
+  let lastCapabilityOpener;
+
+  const closeCapabilityDrawer = (drawer, restoreFocus = true) => {
+    if (!drawer) return;
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.inert = true;
+    document.body.classList.remove('capability-details-open');
+    capabilityOpeners.forEach((opener) => opener.setAttribute('aria-expanded', 'false'));
+    if (activeCapabilityDrawer === drawer) activeCapabilityDrawer = undefined;
+    if (restoreFocus) lastCapabilityOpener?.focus();
+  };
+
+  capabilityOpeners.forEach((opener) => {
+    opener.addEventListener('click', () => {
+      const drawer = document.getElementById(opener.dataset.capabilityOpen);
+      if (!drawer) return;
+      if (activeCapabilityDrawer && activeCapabilityDrawer !== drawer) {
+        closeCapabilityDrawer(activeCapabilityDrawer, false);
+      }
+      lastCapabilityOpener = opener;
+      activeCapabilityDrawer = drawer;
+      drawer.inert = false;
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('capability-details-open');
+      opener.setAttribute('aria-expanded', 'true');
+      drawer.querySelector('.job-details-close')?.focus();
+    });
+  });
+
+  capabilityClosers.forEach((closer) => {
+    closer.addEventListener('click', () => closeCapabilityDrawer(closer.closest('.capability-details-drawer')));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && activeCapabilityDrawer) {
+      closeCapabilityDrawer(activeCapabilityDrawer);
+    }
+  });
+
   const certificateModal = document.getElementById('certificate-modal');
   const certificateImage = document.getElementById('certificate-image');
   const certificateOpeners = document.querySelectorAll('[data-certificate-open]');

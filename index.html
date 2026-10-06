@@ -144,11 +144,14 @@
 <div class="job-details-drawer" id="job-details-drawer" aria-hidden="true">
   <div class="job-details-backdrop" data-job-details-close></div>
   <aside class="job-details-panel" id="job-details-panel" role="dialog" aria-modal="true" aria-labelledby="job-details-title">
-    <button class="job-details-close" type="button" data-job-details-close aria-label="Close job details">&times;</button>
-    <p class="pink-bold">On the Job Training</p>
-    <h2 id="job-details-title">Web Development Engineer Intern</h2>
-    <p class="job-details-company">St. Dominic College of Asia, Inc.</p>
-    <p class="job-details-meta">Bacoor City, Cavite &middot; July 2025 - September 2025</p>
+    <header class="job-details-header">
+      <span class="experience-modal-kicker">ON THE JOB TRAINING</span>
+      <h2 id="job-details-title">Web Development Engineer Intern</h2>
+      <p class="job-details-company">St. Dominic College of Asia, Inc.</p>
+      <p class="job-details-meta">Bacoor City, Cavite &middot; July 2025 - September 2025</p>
+      <button class="job-details-close" type="button" data-job-details-close aria-label="Close job details">&times;</button>
+    </header>
+    <div class="job-details-content">
 
     <h3>Role highlights</h3>
     <ul class="job-details-list">
@@ -160,6 +163,7 @@
     <div class="job-details-actions">
       <a class="job-details-link" href="projects/parentportal.html">View Parent Portal on my Portfolio</a>
       <a class="job-details-link job-details-link-secondary" href="assets/narrative/Vanessa-Andino-Narrative.pdf">View my SDCA OJT Narrative Document</a>
+    </div>
     </div>
   </aside>
 </div>
@@ -383,31 +387,31 @@
       <p>Areas where I’ve gained hands-on experience through projects, internship experience, and continuous learning.</p>
     </header>
     <div class="experience-area-grid">
-      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-web">
+      <button class="experience-card" type="button" data-capability-open="experience-web" aria-controls="experience-web" aria-expanded="false">
         <span class="experience-number">01</span>
         <span class="experience-icon" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
         <h3>Web Development</h3>
         <span class="experience-open">View Details</span>
       </button>
-      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-mobile">
+      <button class="experience-card" type="button" data-capability-open="experience-mobile" aria-controls="experience-mobile" aria-expanded="false">
         <span class="experience-number">02</span>
         <span class="experience-icon" aria-hidden="true"><i class="bi bi-phone"></i></span>
         <h3>Mobile Development</h3>
         <span class="experience-open">View Details</span>
       </button>
-      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-data">
+      <button class="experience-card" type="button" data-capability-open="experience-data" aria-controls="experience-data" aria-expanded="false">
         <span class="experience-number">03</span>
         <span class="experience-icon" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span>
         <h3>Data Analytics &amp; Visualization</h3>
         <span class="experience-open">View Details</span>
       </button>
-      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-design">
+      <button class="experience-card" type="button" data-capability-open="experience-design" aria-controls="experience-design" aria-expanded="false">
         <span class="experience-number">04</span>
         <span class="experience-icon" aria-hidden="true"><i class="bi bi-palette"></i></span>
         <h3>UI/UX &amp; Design</h3>
         <span class="experience-open">View Details</span>
       </button>
-      <button class="experience-card" type="button" data-bs-toggle="modal" data-bs-target="#experience-ai-cloud">
+      <button class="experience-card" type="button" data-capability-open="experience-ai-cloud" aria-controls="experience-ai-cloud" aria-expanded="false">
         <span class="experience-number">05</span>
         <span class="experience-icon" aria-hidden="true"><i class="bi bi-cloud-check"></i></span>
         <h3>AI &amp; Cloud Technologies</h3>
@@ -416,9 +420,10 @@
     </div>
   </div>
 
-  <div class="modal fade experience-modal" id="experience-web" tabindex="-1" aria-labelledby="experience-web-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
-      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 01</span><h2 class="modal-title" id="experience-web-title">Web Development</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="capability-details-drawer job-details-drawer" id="experience-web" aria-hidden="true" inert>
+    <div class="job-details-backdrop" data-capability-close></div>
+    <aside class="job-details-panel experience-modal capability-details-panel" role="dialog" aria-modal="true" aria-labelledby="experience-web-title">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 01</span><h2 class="modal-title" id="experience-web-title">Web Development</h2></div><button class="job-details-close" type="button" data-capability-close aria-label="Close Web Development details">&times;</button></div>
       <div class="modal-body">
         <p class="experience-description">Experience developing web applications through academic projects, internship work, and personal projects, with exposure to both frontend and backend development.</p>
         <h3>What I've worked with</h3>
@@ -432,12 +437,13 @@
           <article class="experience-project"><div><h4>Online Financial Tracker <span>Academic Project</span></h4><p>Frontend development, backend functionality, financial logic, data visualization and testing.</p></div><a href="projects/financial.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
         </div>
       </div>
-    </div></div>
+    </aside>
   </div>
 
-  <div class="modal fade experience-modal" id="experience-mobile" tabindex="-1" aria-labelledby="experience-mobile-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
-      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 02</span><h2 class="modal-title" id="experience-mobile-title">Mobile Development</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="capability-details-drawer job-details-drawer" id="experience-mobile" aria-hidden="true" inert>
+    <div class="job-details-backdrop" data-capability-close></div>
+    <aside class="job-details-panel experience-modal capability-details-panel" role="dialog" aria-modal="true" aria-labelledby="experience-mobile-title">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 02</span><h2 class="modal-title" id="experience-mobile-title">Mobile Development</h2></div><button class="job-details-close" type="button" data-capability-close aria-label="Close Mobile Development details">&times;</button></div>
       <div class="modal-body">
         <p class="experience-description">Experience developing a cross-platform mobile application using Flutter, with a focus on user interfaces, data management, API integration, and health-related data visualization.</p>
         <h3>What I've worked with</h3>
@@ -449,12 +455,13 @@
           <article class="experience-project"><div><h4>GlucoMate <span>Thesis Project</span></h4><p>Served as Project &amp; Thesis Leader and Frontend and Backend Developer, working on the UI, health-record database structure, API integration, and OCR-based glucometer scanning feature.</p></div><a href="projects/glucomate.html">View GlucoMate <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
         </div>
       </div>
-    </div></div>
+    </aside>
   </div>
 
-  <div class="modal fade experience-modal" id="experience-data" tabindex="-1" aria-labelledby="experience-data-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
-      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 03</span><h2 class="modal-title" id="experience-data-title">Data Analytics &amp; Visualization</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="capability-details-drawer job-details-drawer" id="experience-data" aria-hidden="true" inert>
+    <div class="job-details-backdrop" data-capability-close></div>
+    <aside class="job-details-panel experience-modal capability-details-panel" role="dialog" aria-modal="true" aria-labelledby="experience-data-title">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 03</span><h2 class="modal-title" id="experience-data-title">Data Analytics &amp; Visualization</h2></div><button class="job-details-close" type="button" data-capability-close aria-label="Close Data Analytics and Visualization details">&times;</button></div>
       <div class="modal-body">
         <p class="experience-description">Developing foundational experience in data analytics and visualization through academic coursework, self-directed learning, and projects involving structured data, SQL, statistics, and visual reporting.</p>
         <h3>What I've worked with</h3>
@@ -469,12 +476,13 @@
           <article class="experience-project"><div><h4>Online Financial Tracker</h4><p>Financial data visualization using Chart.js.</p></div><a href="projects/financial.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
         </div>
       </div>
-    </div></div>
+    </aside>
   </div>
 
-  <div class="modal fade experience-modal" id="experience-design" tabindex="-1" aria-labelledby="experience-design-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
-      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 04</span><h2 class="modal-title" id="experience-design-title">UI/UX &amp; Design</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="capability-details-drawer job-details-drawer" id="experience-design" aria-hidden="true" inert>
+    <div class="job-details-backdrop" data-capability-close></div>
+    <aside class="job-details-panel experience-modal capability-details-panel" role="dialog" aria-modal="true" aria-labelledby="experience-design-title">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 04</span><h2 class="modal-title" id="experience-design-title">UI/UX &amp; Design</h2></div><button class="job-details-close" type="button" data-capability-close aria-label="Close UI/UX and Design details">&times;</button></div>
       <div class="modal-body">
         <p class="experience-description">Experience designing user interfaces and visual experiences for web, mobile, and interactive applications, with a focus on usability, responsiveness, and visual presentation.</p>
         <h3>What I've worked with</h3>
@@ -491,12 +499,13 @@
           <article class="experience-project"><div><h4>Capybarush</h4><p>Graphic assets and visual design using Inkscape.</p></div><a href="projects/capybarush.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article>
         </div>
       </div>
-    </div></div>
+    </aside>
   </div>
 
-  <div class="modal fade experience-modal" id="experience-ai-cloud" tabindex="-1" aria-labelledby="experience-ai-cloud-title" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content">
-      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 05</span><h2 class="modal-title" id="experience-ai-cloud-title">AI &amp; Cloud Technologies</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="capability-details-drawer job-details-drawer" id="experience-ai-cloud" aria-hidden="true" inert>
+    <div class="job-details-backdrop" data-capability-close></div>
+    <aside class="job-details-panel experience-modal capability-details-panel" role="dialog" aria-modal="true" aria-labelledby="experience-ai-cloud-title">
+      <div class="modal-header"><div><span class="experience-modal-kicker">AREA 05</span><h2 class="modal-title" id="experience-ai-cloud-title">AI &amp; Cloud Technologies</h2></div><button class="job-details-close" type="button" data-capability-close aria-label="Close AI and Cloud Technologies details">&times;</button></div>
       <div class="modal-body">
         <p class="experience-description">Experience integrating AI-powered features and cloud services into academic and personal projects, with a focus on APIs, AI-assisted functionality, OCR, and cloud-based services.</p>
         <h3>What I've worked with</h3>
@@ -510,7 +519,7 @@
         </div>
         <div class="experience-learning"><h3>Learning</h3><p><strong>Microsoft Artificial Intelligence Course: Azure AI Fundamentals</strong><br>TESDA Online Program · 2026</p></div>
       </div>
-    </div></div>
+    </aside>
   </div>
 </section>
 
